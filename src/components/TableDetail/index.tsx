@@ -1,13 +1,11 @@
-import { Typography } from '@mui/material';
-
-export default function TableDetail({attributes}: any) {
-  const rows = Object.keys(attributes);
+export default function TableDetail ({ attributes }: any) {
+  const rows = Object.keys(attributes)
   return (
     <>
       <table>
         <thead>
           <tr>
-            <th>Atributtes</th> 
+            <th>Atributtes</th>
           </tr>
         </thead>
         <tbody>
@@ -37,6 +35,6 @@ export default function TableDetail({attributes}: any) {
           text-align: left;
         }
       `}</style>
-    </>    
-  );
+    </>
+  )
 }

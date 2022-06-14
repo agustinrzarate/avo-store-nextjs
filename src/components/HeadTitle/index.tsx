@@ -1,9 +1,9 @@
-import { Box, Typography } from '@mui/material';
-import Logo from '../../../public/icons/happy-avocado.svg';
-import Image from 'next/image';
+import { Box, Typography } from '@mui/material'
+import Logo from '../../../public/icons/happy-avocado.svg'
+import Image from 'next/image'
 
 export default function HeadTitle () {
-    return (
+  return (
       <Box
         sx={{
           display: 'flex',
@@ -11,21 +11,21 @@ export default function HeadTitle () {
           justifyContent: 'center',
           mb: 6,
           '&:hover': {
-              animation: 'effect linear 1s',
+            animation: 'effect linear 1s'
           },
-          "@keyframes effect": {
-              "0%":{
-                  transform: "scale(1,1)",
-              },
-              "25%":{
-                  transform: "scale(1.3, 0.6)",
-              },
-              "50%":{
-                  transform: "scale(1.1, 0.9)",
-              },
-              "100%":{
-                  transform: "scale(1,1)",
-              },
+          '@keyframes effect': {
+            '0%': {
+              transform: 'scale(1,1)'
+            },
+            '25%': {
+              transform: 'scale(1.3, 0.6)'
+            },
+            '50%': {
+              transform: 'scale(1.1, 0.9)'
+            },
+            '100%': {
+              transform: 'scale(1,1)'
+            }
           }
         }}
       >
@@ -37,5 +37,5 @@ export default function HeadTitle () {
           STORE
         </Typography>
       </Box>
-    );
+  )
 }

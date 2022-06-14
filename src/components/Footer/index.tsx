@@ -1,8 +1,8 @@
-import { Divider, Typography, Container } from '@mui/material';
-import { Box } from '@mui/system';
-import Link from 'next/link';
+import { Divider, Typography, Container } from '@mui/material'
+import { Box } from '@mui/system'
+import Link from 'next/link'
 
-export default function Footer() {
+export default function Footer () {
   return (
     <>
       <section>
@@ -12,7 +12,7 @@ export default function Footer() {
           sx={{
             display: 'flex',
             justifyContent: 'space-evenly',
-            my: 7,
+            my: 7
           }}
         >
           <Box>
@@ -48,5 +48,5 @@ export default function Footer() {
         }
       `}</style>
     </>
-  );
+  )
 }

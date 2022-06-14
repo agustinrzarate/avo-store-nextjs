@@ -1,9 +1,5 @@
-import { CardMedia, Card, CardContent, Typography, Container, Grid, Divider } from '@mui/material';
-import Link from 'next/link';
-
-interface IProductListrops {
-  productList: Array<IProduct>;
-}
+import { CardMedia, Card, CardContent, Typography, Grid, Divider } from '@mui/material'
+import Link from 'next/link'
 
 interface IProduct {
   name: string;
@@ -13,7 +9,12 @@ interface IProduct {
   attributes: object;
   price: any;
 }
-export default function ProductList({ productList }: IProductListrops) {
+
+interface IProductListrops {
+  productList: Array<IProduct>;
+}
+
+export default function ProductList ({ productList }: IProductListrops) {
   return (
     <>
       <Grid container rowSpacing={{ xs: 2, sm: 4, md: 6 }} columnSpacing={{ xs: 2, sm: 4, md: 6 }}>
@@ -26,8 +27,8 @@ export default function ProductList({ productList }: IProductListrops) {
                     maxWidth: 385,
                     transition: '.3s ease',
                     '&:hover': {
-                      transform: 'translateY(-10px) scale(1.05)',
-                    },
+                      transform: 'translateY(-10px) scale(1.05)'
+                    }
                   }}
                 >
                   <CardMedia component="img" height={250} image={image} alt={name} />
@@ -50,5 +51,5 @@ export default function ProductList({ productList }: IProductListrops) {
         }
       `}</style>
     </>
-  );
+  )
 }

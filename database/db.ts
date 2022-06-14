@@ -1,33 +1,32 @@
-import allData from './data';
+import allData from './data'
 
 class Database {
-  constructor() {}
 
-  async getAll(): Promise<any[]> {
-    const asArray = Object.values(allData);
-    await randomDelay();
-    return asArray;
+  async getAll (): Promise<any[]> {
+    const asArray = Object.values(allData)
+    await randomDelay()
+    return asArray
   }
 
-  async getById(id: string): Promise<any | null> {
+  async getById (id: string): Promise<any | null> {
     if (!Object.prototype.hasOwnProperty.call(allData, id)) {
-      return null;
+      return null
     }
 
-    const entry = allData[id];
-    await randomDelay();
-    return entry;
+    const entry = allData[id]
+    await randomDelay()
+    return entry
   }
 }
 
 // Let's also add a delay to make it a bit closer to reality
 const randomDelay = () =>
   new Promise((resolve) => {
-    const max = 350;
-    const min = 100;
-    const delay = Math.floor(Math.random() * (max - min + 1)) + min;
+    const max = 350
+    const min = 100
+    const delay = Math.floor(Math.random() * (max - min + 1)) + min
 
-    setTimeout(resolve, delay);
-  });
+    setTimeout(resolve, delay)
+  })
 
-export default Database;
+export default Database
