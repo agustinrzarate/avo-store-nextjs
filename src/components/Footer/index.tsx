@@ -1,8 +1,8 @@
-import { Divider, Typography, Container } from '@mui/material'
-import { Box } from '@mui/system'
-import Link from 'next/link'
+import { Divider, Typography, Container } from "@mui/material";
+import { Box } from "@mui/system";
+import Link from "next/link";
 
-export default function Footer () {
+export default function Footer() {
   return (
     <>
       <section>
@@ -10,9 +10,9 @@ export default function Footer () {
         <Container
           maxWidth="md"
           sx={{
-            display: 'flex',
-            justifyContent: 'space-evenly',
-            my: 7
+            display: "flex",
+            justifyContent: "space-evenly",
+            my: 7,
           }}
         >
           <Box>
@@ -37,7 +37,7 @@ export default function Footer () {
               <Link href="/">
                 <a>Platzi</a>
               </Link>
-              {''} and course of Next.JS
+              {""} and course of Next.JS
             </Typography>
           </Box>
         </Container>
@@ -48,5 +48,5 @@ export default function Footer () {
         }
       `}</style>
     </>
-  )
+  );
 }

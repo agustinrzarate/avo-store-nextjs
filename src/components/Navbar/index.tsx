@@ -42,7 +42,7 @@ export default function Navbar () {
               </Box>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/cart">
             <a style={{ textDecoration: 'none' }}>
               <Box alignItems="center" sx={stylesNavbar.cart}>
                 <ShoppingCart />
@@ -111,8 +111,6 @@ const stylesNavbar = {
     }
   },
   cart: {
-    mr: 2,
-    width: 70,
     display: 'flex',
     transition: '.3s ease',
     '&:hover': {

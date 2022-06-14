@@ -101,14 +101,12 @@ export default function AvoDetail ({ product }: any) {
         total: total + value,
         cart: [...cart, avo]
       })
-      return
+    } else {
+      setShoppingCart({
+        total: total + value,
+        cart: findProduct()
+      })
     }
-
-    setShoppingCart({
-      total: total + value,
-      cart: findProduct()
-    })
-
     setValue(0)
   }
 
