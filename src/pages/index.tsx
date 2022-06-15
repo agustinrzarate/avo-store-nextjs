@@ -1,13 +1,13 @@
-import type { GetStaticProps } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Container from '@mui/material/Container'
 import Navbar from 'src/components/Navbar'
 import Head from 'next/head'
-import ProductList from 'src/components/ProductList'
+import ProductList, { IProduct } from 'src/components/ProductList'
 import HeadTitle from 'src/components/HeadTitle'
 import Footer from 'src/components/Footer'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch('https://platzi-avo.vercel.app/api/avo')
+  const response = await fetch('https://avo-store-nextjs.vercel.app/api/avo')
   const { data: productList } = await response.json()
 
   return {
@@ -17,7 +17,12 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-function Home (props: any): any {
+interface IProps {
+  children: JSX.Element[] | JSX.Element;
+  productList: Array<IProduct>;
+}
+
+const Home: NextPage<IProps> = (props) => {
   return (
     <>
       <Head>

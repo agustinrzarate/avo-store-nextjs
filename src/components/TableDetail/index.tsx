@@ -1,3 +1,4 @@
+
 export default function TableDetail ({ attributes }: any) {
   const rows = Object.keys(attributes)
   return (
@@ -10,7 +11,7 @@ export default function TableDetail ({ attributes }: any) {
         </thead>
         <tbody>
             {
-              rows.map((key: any) => (
+              rows.map((key: string) => (
                 <tr key={key}>
                   <td>{key}: </td>
                   <td>{attributes[key]}</td>

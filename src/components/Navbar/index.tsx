@@ -8,7 +8,7 @@ import { DataContext } from 'src/context/DataProvider'
 
 export default function Navbar () {
   const { shoppingCart } = useContext<any>(DataContext)
-  const [styles, setStyles] = useState<any>({
+  const [styles, setStyles] = useState<object>({
     fontSize: '12px'
   })
   useEffect(() => {

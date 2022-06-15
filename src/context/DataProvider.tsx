@@ -1,21 +1,13 @@
 import { createContext, Dispatch, SetStateAction, useState } from 'react'
+import { IShoppingCart } from 'src/iterfaces/IShoppingCart';
 
-export interface IShoppingCart {
-  total: number;
-  cart: Array<any>;
-}
 
 export interface IContext {
   shoppingCart: IShoppingCart;
-  setShoppingCart?: Dispatch<SetStateAction<IShoppingCart>>;
+  setShoppingCart: Dispatch<SetStateAction<IShoppingCart>>;
 }
 
-export const DataContext = createContext<IContext | null>({
-  shoppingCart: {
-    total: 0,
-    cart: []
-  }
-})
+export const DataContext = createContext<IContext | null>(null);
 
 interface IProps {
   children: JSX.Element[] | JSX.Element;

@@ -1,15 +1,20 @@
 import { CardMedia, Card, CardContent, Typography, Grid, Divider } from '@mui/material'
 import Link from 'next/link'
 
-interface IProduct {
+export interface IProduct {
   name: string;
   id: string;
   sku: string;
   image: string;
-  attributes: object;
+  attributes: IAttributes;
   price: any;
 }
-
+interface IAttributes {
+  shape: string;
+  hardiness: string;
+  taste: string;
+  description: string;
+}
 interface IProductListrops {
   productList: Array<IProduct>;
 }

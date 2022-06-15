@@ -14,18 +14,17 @@ import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRound
 import TableDetail from 'src/components/TableDetail'
 import React, { useState, useContext } from 'react'
 import { DataContext } from './../../context/DataProvider'
-interface ICart {
-  attributes: any;
-  id: string;
-  image: string;
-  name: string;
-  price: number;
-  sku: string;
-  quantity?: number;
+import { ICart } from 'src/iterfaces/Icart'
+import { NextPage } from 'next'
+import { IProduct } from 'src/components/ProductList'
+
+interface IProps {
+  children: JSX.Element[] | JSX.Element;
+  product: IProduct;
 }
 
 export async function getStaticPaths () {
-  const response = await fetch('https://platzi-avo.vercel.app/api/avo')
+  const response = await fetch('https://avo-store-nextjs.vercel.app/api/avo')
   const { data } = await response.json()
   const paths = data.map(({ id }: any) => ({ params: { id } }))
 
@@ -37,13 +36,14 @@ export async function getStaticPaths () {
 
 export async function getStaticProps ({ params }: any) {
   const response = await fetch(
-    `https://platzi-avo.vercel.app/api/avo/${params?.id}`
+    `https://avo-store-nextjs.vercel.app/api/avo/${params?.id}`
   )
   const product = await response.json()
   return { props: { product } }
 }
 
-export default function AvoDetail ({ product }: any) {
+
+const AvoDetail: NextPage<IProps> = ({ product }) => {
   const {
     attributes: { shape, hardiness, taste }
   } = product
@@ -184,3 +184,5 @@ export default function AvoDetail ({ product }: any) {
     </>
   )
 }
+
+export default AvoDetail;
